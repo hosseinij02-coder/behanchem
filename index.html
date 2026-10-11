@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>آمادگی مدرسین کارگاه عیب‌یابی HPLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07111f;--bg2:#0c1d33;--card:rgba(255,255,255,.055);--line:rgba(255,255,255,.12);--tx:#e8f1f5;--mu:#8fa6b8;--cy:#19d3c5;--am:#ffb347;--co:#ff5d73;--r:18px}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:Vazirmatn,Tahoma,"Segoe UI",sans-serif;color:var(--tx);min-height:100vh;line-height:1.9;
+background:radial-gradient(1000px 600px at 85% -10%,#12406a55,transparent),radial-gradient(800px 500px at 0% 110%,#0f5b5a44,transparent),var(--bg);
+padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;
+-webkit-mask-image:radial-gradient(circle at 50% 30%,#000,transparent 75%);mask-image:radial-gradient(circle at 50% 30%,#000,transparent 75%);opacity:.18}
+.wrap{position:relative;max-width:900px;margin:0 auto;padding:22px 16px 60px}
+.hide{display:none!important}
+.brand{display:flex;align-items:center;gap:10px;color:var(--mu);font-size:14px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--cy);box-shadow:0 0 14px var(--cy)}
+h1{font-size:clamp(28px,6vw,46px);font-weight:800;line-height:1.35;margin:18px 0 8px}
+h1 span{color:var(--cy)}
+.lead{color:var(--mu);max-width:640px;font-size:16px}
+.hero{margin:6px 0 26px}
+.trace{width:100%;height:auto;display:block;margin-top:14px}
+.trace path.l{fill:none;stroke:var(--cy);stroke-width:2.2;stroke-dasharray:1800;stroke-dashoffset:1800;animation:draw 3.2s ease-out forwards;filter:drop-shadow(0 0 6px var(--cy))}
+@keyframes draw{to{stroke-dashoffset:0}}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.tc{all:unset;box-sizing:border-box;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;gap:14px;align-items:center;transition:.2s;backdrop-filter:blur(8px)}
+.tc:hover,.tc:focus-visible{border-color:var(--cy);transform:translateY(-3px);background:#19d3c514}
+.tc:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+.tc i{font-style:normal;font-size:28px;width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:#ffffff0d}
+.tc b{display:block;font-weight:500}.tc small{color:var(--mu)}
+.tc.all{border-color:var(--am);background:#ffb34712}
+.tc.all:hover{border-color:var(--am);background:#ffb34722}
+.sec{font-size:15px;color:var(--mu);margin:26px 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;backdrop-filter:blur(8px)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.chip{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);border-radius:99px;padding:2px 14px;font-size:14px;color:var(--mu)}
+.q{font-size:clamp(18px,3.4vw,23px);font-weight:500;line-height:1.9;margin:6px 0 16px}
+.conf{all:unset;cursor:pointer;font-size:14px;color:var(--mu);border:1px dashed var(--line);border-radius:99px;padding:2px 14px;margin-bottom:14px;display:inline-block}
+.conf.on{color:#07111f;background:var(--am);border:1px solid var(--am);font-weight:500}
+.conf:focus-visible,.opt:focus-visible,.btn:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+.opt{all:unset;box-sizing:border-box;width:100%;display:flex;gap:12px;align-items:flex-start;cursor:pointer;padding:12px 14px;margin-bottom:10px;border:1px solid var(--line);border-radius:14px;background:#ffffff08;transition:.18s}
+.opt:hover{border-color:var(--cy);background:#19d3c510}
+.opt em{font-style:normal;flex:none;width:34px;height:34px;border-radius:10px;background:#ffffff12;display:grid;place-items:center;font-size:13px;color:var(--mu)}
+.opt.ok{border-color:var(--cy);background:#19d3c522}.opt.ok em{background:var(--cy);color:#07111f}
+.opt.bad{border-color:var(--co);background:#ff5d7322}.opt.bad em{background:var(--co);color:#07111f}
+.opt.dim{opacity:.55;cursor:default}
+.fb{margin-top:6px;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ex,.tip{border-radius:14px;padding:12px 16px;margin-top:10px;font-size:15px}
+.ex{background:#ffffff0a;border-inline-start:3px solid var(--cy)}
+.tip{background:#ffb34714;border-inline-start:3px solid var(--am)}
+.ex b,.tip b{display:block;font-weight:500;margin-bottom:2px}.tip b{color:var(--am)}.ex b{color:var(--cy)}
+.btn{all:unset;box-sizing:border-box;cursor:pointer;display:inline-block;background:var(--cy);color:#06222a;font-weight:800;padding:10px 26px;border-radius:99px;margin-top:16px;transition:.2s}
+.btn:hover{box-shadow:0 0 22px #19d3c577;transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--tx);border:1px solid var(--line);margin-inline-start:8px}
+.btn.g:hover{box-shadow:none;border-color:var(--cy)}
+.chrom{width:100%;height:auto;display:block;margin:4px 0 10px}
+.pulse{animation:p 1.2s infinite}@keyframes p{50%{opacity:.25}}
+.score{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.ring{width:130px;height:130px;flex:none}
+.ring text{font-family:inherit;font-weight:800;fill:var(--tx)}
+.bar{height:10px;border-radius:9px;background:#ffffff12;overflow:hidden;margin:6px 0 4px}
+.bar>i{display:block;height:100%;border-radius:9px;transition:width 1s}
+.row{margin-bottom:16px}.row p{font-size:15px;color:var(--mu)}
+.row h4{font-weight:500;display:flex;justify-content:space-between}
+.warn{border-inline-start:3px solid var(--co);background:#ff5d7312;border-radius:14px;padding:12px 16px;margin-top:10px;font-size:15px}
+details{background:#ffffff08;border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:500}
+.n{color:var(--mu);font-size:13px;margin-top:30px;text-align:center}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.trace path.l{stroke-dashoffset:0}}
+@media(max-width:520px){.wrap{padding:16px 12px 48px}.card{padding:15px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section id="home">
+  <div class="brand"><span class="dot"></span>مجموعه آموزشی کارگاه عیب‌یابی HPLC — ویژه کارکنان پزشکی قانونی</div>
+  <div class="hero">
+    <h1>مدرس هستید؟ پیش از کلاس <span>خودتان را بسنجید</span></h1>
+    <p class="lead">۳۲ پرسش عیب‌یابی در ۸ موضوع، با تمرکز بر نمونه‌های پزشکی قانونی و سامانه‌های KNAUER AZURA. بعد از هر پاسخ، توضیح علمی و «نکته‌ی تدریس» می‌گیرید و در پایان، برنامه‌ی مرور شخصی‌شده‌تان آماده است.</p>
+    <svg class="trace" viewBox="0 0 900 130" aria-hidden="true">
+      <line x1="0" y1="112" x2="900" y2="112" stroke="#ffffff22"/>
+      <path class="l" d="M0 112 L120 112 Q135 112 140 100 T150 112 L230 112 C245 112 250 40 262 40 S280 112 300 112 L380 112 C392 112 396 70 408 70 S424 112 440 112 L520 112 C532 112 540 12 556 12 S580 112 610 112 C622 112 626 112 650 112 L700 112 C712 112 718 54 730 54 S750 112 790 112 L900 112"/>
+    </svg>
+  </div>
+  <div class="sec">یک موضوع را انتخاب کنید یا همه را با هم بزنید</div>
+  <div class="grid" id="topics"></div>
+  <p class="n">کار ابزار کاملاً روی مرورگر شما انجام می‌شود و هیچ پاسخی ذخیره یا ارسال نمی‌شود. پرسش‌های مربوط به AZURA بر پایه‌ی مشخصات عمومی ماژول‌ها (P 6.1L، AS 6.1L، CT 2.1، DAD 2.1L، UVD 2.1L و ClarityChrom) نوشته شده؛ پیش از کلاس با مدل و پیکربندی دقیق دستگاه میزبان تطبیق دهید.</p>
+</section>
+
+<section id="quiz" class="hide">
+  <div class="top"><span class="chip" id="qt"></span><span class="chip" id="qc"></span></div>
+  <div id="qchrom"></div>
+  <div class="card">
+    <div class="q" id="qq"></div>
+    <button class="conf" id="cf" aria-pressed="false">✋ در پاسخ مطمئنم</button>
+    <div id="qo"></div>
+    <div id="fb" class="fb hide"></div>
+  </div>
+</section>
+
+<section id="result" class="hide"></section>
+</div>
+
+<script>
+const T=[
+{n:"فشار و پمپ",i:"⚙️",w:"تمرین کنید که مدل «ستون را جدا کن و فشار را ببین» را به‌صورت قدم‌به‌قدم روی تخته توضیح دهید؛ بیشتر شرکت‌کنندگان فقط الگوی فشار را حفظ‌اند.",s:"می‌توانید کلاس را با یک سناریوی «فشار بالا و پایین کنار هم» شروع کنید تا شرکت‌کنندگان خودشان نتیجه‌گیری کنند."},
+{n:"خط پایه و نویز",i:"📈",w:"رانش، نویز دوره‌ای و پیک شبح را یک‌جا مقایسه کنید و برای هرکدام «اولین آزمایش تشخیصی» را مشخص کنید.",s:"خوب است یک کروماتوگرام بلانک واقعی با پیک شبح نشان دهید و بپرسید منبع آلودگی کجاست."},
+{n:"شکل پیک",i:"🔔",w:"رابطه‌ی شیمیایی علت (سیلانول، حلال نمونه، فضای خالی) با شکل پیک را با یک نمودار ساده ببندید.",s:"موضوع مناسبی برای بحث گروهی است؛ از شرکت‌کنندگان بخواهید مثال‌های واقعی از نمونه‌های خودشان بیاورند."},
+{n:"ستون و فاز متحرک",i:"🧪",w:"جابه‌جایی زمان بازداری را بر اساس «همه‌ی پیک‌ها یا فقط ترکیبات یونی‌شونده» دسته‌بندی کنید؛ این الگو تشخیص را سریع می‌کند.",s:"می‌توانید همین بخش را به بحث نگهداری و عمر ستون با نمونه‌های بیولوژیک پیوند بدهید."},
+{n:"تزریق و نمونه",i:"💉",w:"کاروور و تکرارپذیری را با مثال‌های عددی (RSD و درصد کاروور) توضیح دهید؛ شرکت‌کنندگان پزشکی قانونی به عدد حساس‌اند.",s:"برای نمونه‌های واقعی بیولوژیک، مثال‌های آماده‌سازی نمونه‌ی خودتان را بیاورید؛ برای این گروه کاملاً کاربردی است."},
+{n:"آشکارساز و اعتبار",i:"🔦",w:"تفاوت «افت حساسیت ناشی از لامپ» با «افت ناشی از سلول یا حباب» و منطق SST را روشن کنید.",s:"تأکید بر SST و خلوص پیک برای گزارش‌های پزشکی قانونی ارزش ویژه دارد؛ وقت بیشتری به آن بدهید."},
+{n:"نمونه‌های پزشکی قانونی",i:"🧬",w:"پرسش‌های ماتریکس، کالیبراسیون، کاروور و معیار شناسایی را با مثال‌های واقعی از پرونده‌های بی‌نام توضیح دهید؛ پیامد حقوقی خطا را برجسته کنید.",s:"سناریوهای «نمونه‌ی پس از مرگ» و «نتیجه‌ی مثبت مرزی» را به بحث گروهی بسپارید."},
+{n:"سامانه‌ی AZURA و ClarityChrom",i:"🛠️",w:"پیش از کلاس، ماژول‌های دقیق سامانه‌ی آزمایشگاه میزبان (پمپ، نمونه‌بردار، کوره، آشکارساز) را بپرسید و مثال‌ها را با همان‌ها هماهنگ کنید.",s:"می‌توانید یک جلسه‌ی کوتاه عملی روی همان ماژول‌ها (لامپ، سلول، سر پمپ) برای شرکت‌کنندگان بگذارید."}
+];
+const Q=[
+[0,"فشار سیستم در طول چند تزریق به‌تدریج و پیوسته بالا می‌رود. محتمل‌ترین علت کدام است؟",["انسداد تدریجی فریت، پیش‌ستون یا ستون","حباب هوا در سر پمپ","شل بودن یکی از اتصال‌ها","پایان عمر لامپ آشکارساز"],0,"افزایش تدریجی فشار نشانه‌ی انسداد (ذرات نمونه یا رسوب بافر) است. هوا فشار را نوسانی می‌کند، نشتی فشار را پایین می‌آورد و لامپ ربطی به فشار ندارد.","برای محل انسداد، قطعات را از آشکارساز به سمت پمپ یکی‌یکی جدا کنید و ببینید فشار کجا می‌افتد."],
+[0,"فشار نوسان منظم و شدید دارد و با ضربان پمپ هماهنگ است. اول چه چیزی را بررسی می‌کنید؟",["دمای کوره ستون","حباب هوا یا شیر یک‌طرفه‌ی کثیف","طول موج آشکارساز","حجم تزریق"],1,"نوسان هم‌زمان با ضربان یعنی مشکل در سر پمپ است: هواگیری ناقص، شیر یک‌طرفه‌ی کثیف یا سیل فرسوده.","شرکت‌کنندگان را به عادت «گاززدایی فاز متحرک و پرایم کردن» تشویق کنید؛ بسیاری از مشکلات از همین‌جا شروع می‌شود."],
+[0,"بعد از تعویض ستون، فشار پایین‌تر از معمول است و کنار اتصال ستون خیس دیده می‌شود. اولین اقدام؟",["افزایش شدید سرعت جریان","تعویض فاز متحرک","بررسی نشتی و درست بودن فروول و اتصال، بدون سفت‌کردن بیش‌ازحد","تعویض لامپ"],2,"فروول یا اتصال نامناسب نشتی ایجاد می‌کند. سفت‌کردن بیش‌ازحد، فروول و درگاه را خراب می‌کند.","نشان دهید که فروول باید با نوع اتصال و همان ستون سازگار باشد؛ چند خطای رایج در اتصال را عملی نشان دهید."],
+[1,"در گرادیان UV با طول موج ۲۱۰ نانومتر، خط پایه با افزایش درصد حلال B به‌طور پیوسته بالا می‌رود. علت رایج؟",["خرابی پمپ","جذب متفاوت حلال یا افزودنی بین A و B در این طول موج","نشتی در انژکتور","فشار بالا"],1,"حلال‌ها و افزودنی‌ها (مثل TFA یا بافر) در طول موج‌های پایین جذب متفاوتی دارند و در گرادیان رانش ایجاد می‌کنند.","راه‌حل را بحث کنید: حلال با کیفیت HPLC/LC-MS، غلظت افزودنی یکسان در A و B یا طول موج بالاتر."],
+[1,"نویز خط پایه الگوی منظم و هم‌زمان با ضربان پمپ دارد. مشکوک به چه چیزی هستید؟",["ضربان پمپ یا مخلوط‌شدن ناقص حلال‌ها","نمونه‌ی آلوده","ستون پیر","دمای محیط"],0,"نویز دوره‌ای هم‌دوره با پمپ معمولاً از ضربان یا مخلوط‌شدن ناکافی در میکسر می‌آید، به‌ویژه در گرادیان و طول موج پایین.","با یک آزمایش ساده نشان دهید: جایگزین‌کردن گرادیان با ایزوکراتیک و دیدن اینکه نویز تغییر می‌کند یا نه."],
+[1,"در تزریق بلانک گرادیان، پیک‌های ناخواسته در میانه‌ی کروماتوگرام دیده می‌شود. توضیح محتمل؟",["حباب در سلول","آلودگی آب یا حلال که در ابتدای گرادیان روی ستون تغلیظ و سپس شسته می‌شود","فشار پایین","نشتی پمپ"],1,"ناخالصی‌های فاز آبی در شرایط ضعیف روی ستون تجمع می‌کنند و با افزایش حلال قوی به‌صورت پیک شبح خارج می‌شوند.","توصیه‌ی عملی: آب تازه، ظرف تمیز و مقایسه‌ی بلانک با حجم‌های مختلف تزریق یا زمان تعادل متفاوت."],
+[2,"دم‌کشیدگی شدید پیک برای ترکیبات بازی در ستون C18 مشاهده می‌شود. توضیح و راه‌حل رایج؟",["برهم‌کنش با سیلانول‌های باقی‌مانده؛ pH پایین‌تر، افزودنی یا ستون end-capped","حباب در لوپ","لامپ ضعیف","گرادیان بسیار تند"],0,"گروه‌های بازی با سیلانول‌های یونیزه‌شده برهم‌کنش ثانویه می‌دهند. پایین‌آوردن pH، افزودنی مناسب یا ستون کم‌سیلانول کمک می‌کند.","برای پزشکی قانونی مثال‌های داروهای بازی (آمفتامین‌ها، اپیوئیدها) را در کلاس مطرح کنید."],
+[2,"همه‌ی پیک‌ها دوشاخه‌اند، نه فقط یکی. محتمل‌ترین علت؟",["ناخالصی همه‌ی ترکیبات","فاز متحرک اشتباه","حفره یا کانال در ابتدای ستون، یا فریت و پیش‌ستون مسدود","تغییر طول موج"],2,"اگر همه‌ی پیک‌ها دوشاخه باشند، علت فیزیکی و در مسیر ورود نمونه است؛ اگر فقط یک پیک دوشاخه باشد، جداشدن دو ترکیب دور از انتظار نیست.","همین تفاوت «همه یا یکی» را روی تخته بنویسید؛ تفکیک سریع علت را فراگیر می‌کند."],
+[2,"پیک‌های اولیه پهن و دچار فرونتینگ شده‌اند در حالی که نمونه در حلال خالص قوی حل شده بود. بهترین راه‌حل؟",["افزایش دمای کوره","حل‌کردن نمونه در فاز متحرک اولیه یا کاهش حجم تزریق","افزایش طول موج","تعویض لامپ"],1,"حلال نمونه‌ی قوی‌تر از فاز متحرک اولیه، نمونه را در ابتدای ستون پخش می‌کند و پیک را پهن می‌سازد.","موضوعی که شرکت‌کنندگان اغلب نادیده می‌گیرند؛ با یک مقایسه‌ی تزریق ۵ و ۵۰ میکرولیتر نمایش دهید."],
+[3,"در فاز معکوس، زمان بازداری همه‌ی پیک‌ها در طول روز به‌تدریج بیشتر شده است. محتمل‌ترین علت؟",["افزایش دمای کوره","افزایش حجم تزریق","تبخیر جزء آلی از ظرف فاز متحرک یا کاهش دما","خرابی لامپ"],2,"تبخیر جزء آلی (استونیتریل یا متانول) درصد آب را بالا می‌برد و بازداری را افزایش می‌دهد. دمای کمتر هم بازداری را بیشتر می‌کند.","درپوش و ظرف مناسب، و مخلوط‌کردن آنلاین به‌جای پیش‌مخلوط را معرفی کنید."],
+[3,"فقط زمان بازداری ترکیبات یونی‌شونده جابه‌جا می‌شود و ترکیبات خنثی ثابت‌اند. مشکوک به چه چیزی هستید؟",["تغییر pH فاز متحرک یا ضعف ظرفیت بافر","انسداد ستون","حباب هوا","نشتی پمپ"],0,"ترکیبات خنثی به pH حساس نیستند؛ ترکیبات یونی‌شونده با تغییر pH بازداری متفاوتی نشان می‌دهند.","pH را قبل از افزودن حلال آلی اندازه بگیرند؛ این قاعده را تأکید کنید."],
+[3,"ستون C18 پس از صدها تزریق نمونه‌ی خون، بشقاب نظری کمتر و فشار بالاتر دارد. بهترین پیشگیری؟",["افزایش سرعت جریان","گارد ستون به‌همراه آماده‌سازی نمونه (رسوب پروتئین یا SPE) و شست‌وشوی دوره‌ای","استفاده از ستون بزرگ‌تر","تغییر طول موج"],1,"پروتئین‌ها و لیپیدها ستون را مسدود و آلوده می‌کنند. گارد و آماده‌سازی مناسب نمونه عمر ستون را چند برابر می‌کند.","هزینه‌ی گارد را با هزینه‌ی ستون مقایسه کنید؛ معمولاً مخاطب را قانع می‌کند."],
+[4,"بعد از تزریق نمونه‌ی پرغلظت، در بلانک بعدی پیک کوچکی همان ترکیب دیده می‌شود. بهترین اقدام؟",["افزایش طول موج","بهینه‌کردن شست‌وشوی سوزن با حلال مناسب‌تر و تزریق بلانک پس از نمونه‌ی پرغلظت","کاهش سرعت جریان","تعویض ستون بلافاصله"],1,"این کاروور است. شست‌وشوی سوزن و درگاه با حلال قوی‌تر و بلانک‌گذاری راه‌حل اصلی است.","در گزارش‌های پزشکی قانونی کاروور می‌تواند نتیجه را مخدوش کند؛ ترتیب توالی تزریق را آموزش دهید."],
+[4,"سطح پیک‌ها در تزریق‌های تکراری تکرارپذیری ضعیفی دارد (RSD بالا) در حالی که زمان بازداری ثابت است. محتمل‌ترین علت؟",["تغییر pH","حباب در سرنگ یا لوپ، یا مشکل سوزن و روتور تزریق","ستون پیر","خرابی لامپ"],1,"زمان بازداری ثابت یعنی فاز متحرک و پمپ سالم‌اند؛ مشکل در حجم تزریق‌شده است.","با دو جدول سناریو نشان دهید: «RSD بد با RT ثابت» و «RT نوسانی با RSD بد» چه علت‌هایی دارند."],
+[4,"پیش از تزریق نمونه‌ی خون یا ادرار به HPLC، برای حفاظت از سیستم چه می‌کنید؟",["مستقیم تزریق می‌کنیم","فقط رقیق می‌کنیم","سانتریفیوژ و فیلتر، رسوب پروتئین یا SPE بسته به روش","فاز متحرک را قوی‌تر می‌کنیم"],2,"ماتریس بیولوژیک پر از ذرات و ماکرومولکول است و بدون آماده‌سازی، سیستم و ستون زود آسیب می‌بینند.","انتخاب بین رسوب پروتئین، LLE و SPE را در جدول مزایا و معایب مقایسه کنید."],
+[5,"حساسیت UV ناگهان افت کرده و نویز بالا رفته است. اول چه چیزی را بررسی می‌کنید؟",["ستون","لامپ (ساعت کار)، سلول جریان و حباب در سلول","نرم‌افزار","نمونه‌ی کنترل"],1,"لامپ نزدیک پایان عمر، سلول آلوده یا حباب در سلول، سه علت اصلی افت حساسیت همراه با نویز هستند.","آزمون شدت لامپ (lamp intensity test) و بررسی سلول را به‌صورت یک فهرست کوتاه ارائه کنید."],
+[5,"در آشکارساز DAD برای ارزیابی خلوص پیک کدام روش مناسب‌تر است؟",["فقط مقایسه‌ی زمان بازداری","مقایسه‌ی طیف‌های UV نقاط مختلف پیک (بالا و دو سمت) با یکدیگر و با کتابخانه","افزایش حجم تزریق","تغییر pH"],1,"هم‌خوانی طیف‌ها در سراسر پیک نشانه‌ی خلوص است. این یکی از ابزارهای تأیید در پزشکی قانونی به‌شمار می‌رود، البته همراه با روش‌های مکمل.","محدودیت را هم بگویید: ترکیبات با طیف مشابه با DAD متمایز نمی‌شوند و تأیید با MS لازم است."],
+[5,"پیش از تحلیل نمونه‌های واقعی در آزمایشگاه پزشکی قانونی، آزمون SST چه نقشی دارد؟",["جایگزین اعتبارسنجی روش است","نشان می‌دهد سیستم همان روز، مشخصات مورد انتظار (تکرارپذیری، تفکیک، دم‌کشیدگی و...) را دارد","فقط برای ثبت در دفتر است","برای ستون جدید استفاده می‌شود"],1,"SST تأیید می‌کند سیستم در آن روز آماده‌ی تحلیل است؛ اعتبارسنجی روش جداست و SST جایگزین آن نمی‌شود.","تفاوت اعتبارسنجی، SST و کنترل کیفیت را در یک مثال روشن کنید؛ بسیار رایج است که با هم اشتباه می‌شوند."],
+[6,"مایع رویی نمونه‌ی خون پس از رسوب پروتئین با استونیتریل، با حجم زیاد به ستون RP با فاز اولیه‌ی عمدتاً آبی تزریق می‌شود و پیک‌ها پهن یا شکافته‌اند. بهترین اصلاح؟",["افزایش طول موج","رقیق‌کردن مایع رویی با آب یا فاز اولیه (یا تبخیر و بازسازی در فاز متحرک) و کاهش حجم تزریق","افزایش فشار پمپ","تعویض لامپ"],1,"حلال نمونه‌ی قوی‌تر از فاز اولیه باعث پهن‌شدن یا شکافتن پیک‌ها می‌شود؛ تغلیظ و بازسازی در فاز متحرک این مشکل را حل می‌کند.","در پزشکی قانونی حجم نمونه محدود است؛ تبخیر و بازسازی هم حلال را اصلاح و هم نمونه را تغلیظ می‌کند."],
+[6,"در نمونه‌ی خون پس از مرگ، یک پیک درون‌زاد هم‌زمان با پیک ماده‌ی هدف خارج می‌شود. اقدام صحیح؟",["گزارش بر پایه‌ی ارتفاع پیک","بررسی گزینش‌پذیری: بلانک ماتریکس، مقایسه‌ی طیف DAD، تغییر گرادیان یا pH یا ستون، یا تمیزسازی دقیق‌تر نمونه","افزایش حجم تزریق","حذف پیک مزاحم با انتگرال‌گیری دستی"],1,"ماتریکس پس از مرگ مزاحمت‌های بیشتری دارد. گزینش‌پذیری باید با بلانک ماتریکس و طیف پیک تأیید شود و در صورت لزوم جداسازی بهتر شود.","تأکید کنید که حذف پیک مزاحم با انتگرال‌گیری دستی در پزشکی قانونی قابل دفاع نیست."],
+[6,"برای تعیین مقدار یک دارو در خون، کالیبراتورها چگونه باید تهیه شوند؟",["در حلال خالص کافی است","در ماتریکس مشابه (خون بلانک) و با همان آماده‌سازی نمونه‌ها، همراه با استاندارد داخلی و نمونه‌های QC","فقط با یک نقطه","از خود نمونه‌ی مجهول"],1,"استخراج و اثر ماتریکس تنها در کالیبراتورِ ماتریکسی با نمونه‌ی مجهول یکسان است؛ استاندارد داخلی خطای آماده‌سازی را جبران می‌کند.","مفهوم «ماتریکس مشابه» را با مثال خون کامل، پلاسما و ادرار روشن کنید."],
+[6,"بلافاصله پس از یک نمونه‌ی بسیار پرغلظت، نمونه‌ی بعدی پیک مثبت ضعیفی دارد. اقدام درست؟",["همان‌جا مثبت گزارش می‌شود","ابتدا کاروور را رد کنید: بلانک پس از نمونه‌ی پرغلظت، تغییر ترتیب نمونه‌ها و تکرار؛ بعد تصمیم بگیرید","نمونه را حذف می‌کنیم","دمای کوره را بالا می‌بریم"],1,"نتیجه‌ی مثبت کاذب ناشی از کاروور پیامد حقوقی جدی دارد. بلانک و تکرار با ترتیب متفاوت می‌تواند آن را مشخص کند.","توصیه‌ی ترتیب توالی: نمونه‌های با غلظت احتمالاً پایین پیش از نمونه‌های پرغلظت و بلانک پس از نمونه‌های بالا."],
+[6,"زمان بازداری و طیف DAD ماده‌ی مجهول با استاندارد هم‌خوان است. آیا برای شناسایی نهایی در گزارش پزشکی قانونی کافی است؟",["بله، همیشه","نه همیشه؛ بسته به معیار پذیرش روش و آزمایشگاه ممکن است روش تأییدی مستقل (مثل MS) لازم باشد","فقط اگر پیک بلند باشد","فقط اگر RSD کمتر از ۲٪ باشد"],1,"UV و زمان بازداری شواهد مهم‌اند ولی گزینش‌پذیری محدودی دارند. ترکیبات هم‌خانواده طیف مشابه دارند و معیار نهایی را روش معتبر و سیاست آزمایشگاه تعیین می‌کند.","با شرکت‌کنندگان معیارهای پذیرش روش و سیاست تأیید در آزمایشگاه‌شان را مرور کنید."],
+[6,"در یک نمونه‌ی خون ذخیره‌شده، غلظت برخی ترکیبات ناپایدار (مثل بنزودیازپین‌های نیترودار) کمتر از انتظار به‌دست آمد. اولین بررسی؟",["لامپ آشکارساز","پایداری آنالیت در نمونه: زمان، دما و شرایط نگهداری و تأخیر تا تحلیل، و ثبت آن‌ها","فشار پمپ","نسخه‌ی نرم‌افزار"],1,"برخی ترکیبات حین نگهداری یا پس از مرگ تجزیه می‌شوند؛ شرایط ذخیره و فاصله‌ی زمانی باید در تفسیر نتیجه لحاظ شود.","مفهوم پایداری را به زنجیره‌ی نگهداری و ثبت دمای ذخیره پیوند بدهید."],
+[6,"سطح پیک استاندارد داخلی فقط در چند نمونه‌ی مشخص (نه همه) به‌طور محسوس پایین است. محتمل‌ترین توضیح؟",["لامپ خراب","اثر ماتریکس یا بازیافت ناقص استخراج در همان نمونه‌ها؛ بازیافت را بررسی و با رقیق‌سازی تکرار کنید","ستون پیر","فاز متحرک اشتباه"],1,"اگر مشکل در همه‌ی نمونه‌ها بود، دستگاه مقصر بود؛ افت موضعی یعنی ماتریکس یا استخراج آن نمونه.","پایش سطح استاندارد داخلی در هر توالی یک ابزار ساده‌ی کنترل کیفیت است؛ حد پذیرش را در کلاس بحث کنید."],
+[7,"در پمپ AZURA P 6.1L تفاوت اصلی پیکربندی LPG با HPG چیست؟",["LPG فقط ایزوکراتیک است","در LPG شیر مخلوط‌کن در سمت فشار پایین تا چهار حلال را مخلوط می‌کند؛ در HPG شیر انتخاب حلال دارد و دو حلال هم‌زمان با دو پمپ مخلوط می‌شوند","HPG آشکارساز دارد","تفاوتی ندارند"],1,"بر اساس مشخصات KNAUER، LPG امکان اختلاط تا چهار حلال را با یک شیر در سمت مکش می‌دهد و HPG یک شیر انتخاب حلال دارد و دو حلال را هم‌زمان مخلوط می‌کند.","با توجه به پیکربندی دستگاه آزمایشگاه میزبان، عیب‌یابی گرادیان را متفاوت توضیح دهید."],
+[7,"در سامانه‌ی AZURA با پمپ P 6.1L، نویز دوره‌ای در گرادیان با DAD در ۲۱۰ nm دیده می‌شود. کدام گزینه‌ی سخت‌افزاری وجود دارد؟",["تعویض سلول به سلول کوتاه‌تر","تعویض محفظه‌ی اختلاط با حجم بزرگ‌تر (با پیامد افزایش حجم تأخیر گرادیان)","حذف گاززدا","افزایش سرعت جریان"],1,"محفظه‌ی اختلاط P 6.1L در سه حجم موجود است (حجم استاندارد ۱۰۰ میکرولیتر)؛ حجم بزرگ‌تر اختلاط را بهتر می‌کند ولی تأخیر گرادیان را زیاد می‌کند.","روش‌های سریع را با محفظه‌ی کوچک و روش‌های حساس به نویز را با محفظه‌ی بزرگ مقایسه کنید."],
+[7,"برای انتخاب سلول جریان در DAD 2.1L روی ستون‌های باریک و روش‌های سریع، کدام ملاحظه درست است؟",["همیشه بلندترین مسیر نوری","مسیر نوری بلندتر حساسیت بیشتری می‌دهد ولی حجم بیشتر باعث پهن‌شدن پیک می‌شود؛ سلول باید با قطر ستون و سرعت جریان هماهنگ باشد","سلول اهمیتی ندارد","فقط سلول فشار بالا"],1,"KNAUER سلول‌های جریان متنوعی برای DAD 2.1L عرضه می‌کند؛ باید بین حساسیت و پهن‌شدن پیک مصالحه کرد.","جدول سلول‌های مدل دقیق آزمایشگاه میزبان را از نمایندگی بگیرید و در کلاس نشان دهید."],
+[7,"در یک توالی طولانی، پیک برخی آنالیت‌های ناپایدار در انتهای توالی کوچک‌تر می‌شود. کدام اقدام درباره‌ی نمونه‌بردار AS 6.1L مناسب است؟",["افزایش حجم تزریق در انتها","استفاده از نمونه‌بردار با کنترل دما (در صورت وجود) و درپوش مناسب ویال‌ها، و طراحی توالی کوتاه‌تر","تعویض ستون","افزایش فشار"],1,"ناپایداری در سینی نمونه یعنی خطای تدریجی وابسته به زمان؛ خنک‌کردن و کم‌کردن زمان ماندن ویال کمک می‌کند. نسخه‌ی دارای کنترل دمای AS 6.1L موجود است.","نوع مدل (با یا بدون کنترل دما) را از آزمایشگاه میزبان بپرسید."],
+[7,"زمان بازداری ستون در سامانه‌ی دارای کوره‌ی CT 2.1 بین صبح و عصر جابه‌جا می‌شود. اقدام درست؟",["تغییر طول موج","تنظیم دمای ثابت کوره (دامنه‌ی ۵ تا ۸۵ درجه) و اطمینان از تعادل دمایی ستون پیش از شروع توالی، به‌جای تکیه بر دمای محیط","افزایش حجم تزریق","تعویض لامپ"],1,"دمای ستون روی بازداری اثر مستقیم دارد. CT 2.1 دمای ثابت بالاتر و پایین‌تر از دمای اتاق را فراهم می‌کند.","دمای پایین‌تر از اتاق یا نزدیک اتاق را فراموش نکنید؛ ثابت‌بودن دما مهم‌تر از عدد آن است."],
+[7,"هنگام انتگرال‌گیری دستی یک پیک مرزی در ClarityChrom برای نمونه‌ی پزشکی قانونی، کدام رویکرد درست است؟",["هر نمونه را جداگانه به دلخواه تنظیم کنیم","روش انتگرال‌گیری یکسان برای استانداردها و نمونه‌ها، مستندسازی دلیل هر تغییر و حفظ داده‌ی خام و تاریخچه‌ی تغییرات","نتیجه را بعد از ویرایش ذخیره و فایل اصلی را حذف کنیم","فقط نتیجه‌ی بهتر را نگه داریم"],1,"قابلیت‌ها و تنظیمات ثبت تغییرات ClarityChrom به نسخه و ماژول بستگی دارد، ولی اصل کلی ثابت است: یکسان‌بودن شیوه، شفافیت و حفظ داده‌ی خام.","پیش از کلاس نسخه و ماژول ClarityChrom آزمایشگاه میزبان را بپرسید و ویژگی‌های ثبت تغییرات را روی همان نشان دهید."],
+[7,"اگر سامانه‌ی آزمایشگاه به‌جای DAD از UVD 2.1L (آشکارساز تک‌طول‌موج متغیر) استفاده کند، کدام کار ممکن نیست؟",["تغییر طول موج","ثبت طیف کامل و ارزیابی خلوص پیک بر پایه‌ی طیف","استفاده از حلال آب","ثبت کروماتوگرام"],1,"UVD 2.1L تک‌طول‌موج متغیر است و طیف کامل نمی‌دهد؛ طیف‌گیری و ارزیابی خلوص به DAD یا آشکارساز چندکاناله‌ی مناسب نیاز دارد.","نوع آشکارساز را برای هر سناریوی پزشکی قانونی مشخص کنید؛ اگر آزمایشگاه UVD دارد، راه‌های جایگزین تأیید را بگویید."]
+];
+const fa=n=>(+n).toLocaleString("fa-IR"),L=["الف","ب","ج","د"],$=s=>document.querySelector(s);
+const shuf=a=>{for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+let S={pool:[],i:0,ans:[],sure:false,lock:false};
+const show=id=>["home","quiz","result"].forEach(x=>$("#"+x).classList.toggle("hide",x!==id));
+
+/* خانه */
+const cnt=t=>Q.filter(q=>q[0]===t).length;
+$("#topics").innerHTML=`<button class="tc all" data-t="-1"><i>🎯</i><span><b>همه‌ی موضوعات</b><small>${fa(Q.length)} پرسش، ترتیب تصادفی</small></span></button>`+
+T.map((t,k)=>`<button class="tc" data-t="${k}"><i>${t.i}</i><span><b>${t.n}</b><small>${fa(cnt(k))} پرسش</small></span></button>`).join("");
+$("#topics").onclick=e=>{const b=e.target.closest(".tc");if(b)start(+b.dataset.t)};
+
+function start(t,ids){
+  const list=shuf(ids||Q.map((_,k)=>k).filter(k=>t<0||Q[k][0]===t));
+  S={pool:list.map(k=>{const q=Q[k];return{k,t:q[0],q:q[1],o:shuf(q[2].map((x,j)=>({x,ok:j===q[3]}))),e:q[4],tip:q[5]}}),i:0,ans:[],sure:false,lock:false};
+  show("quiz");scrollTo(0,0);renderQ();
+}
+
+/* کروماتوگرام پیشرفت */
+function chrom(N,ans,cur){
+  const W=700,H=110,b=H-12,st=(W-30)/N;let out=`<svg class="chrom" viewBox="0 0 ${W} ${H}" role="img" aria-label="کروماتوگرام پیشرفت آزمون"><line x1="0" y1="${b}" x2="${W}" y2="${b}" stroke="#ffffff30"/>`;
+  for(let i=0;i<N;i++){const c=15+st*(i+.5),a=ans[i];
+    if(!a){out+=`<line x1="${c}" y1="${b}" x2="${c}" y2="${b-6}" stroke="#ffffff30"/>`;if(i===cur)out+=`<circle class="pulse" cx="${c}" cy="${b}" r="5" fill="#ffb347"/>`;continue}
+    const h=a.ok?(a.sure?88:68):38,s=st*.22,tl=a.ok?1:2.6,col=a.ok?"#19d3c5":"#ff5d73";let d=`M${c-3.2*s} ${b}`;
+    for(let x=c-3.2*s;x<=c+3.2*s*tl;x+=s/4){const q=x-c,g=q<0?s:s*tl;d+=`L${x.toFixed(1)} ${(b-h*Math.exp(-Math.pow(q/g,2))).toFixed(1)}`}
+    out+=`<path d="${d}L${c+3.2*s*tl} ${b}Z" fill="${col}33" stroke="${col}" stroke-width="2"/>`}
+  return out+"</svg>"}
+
+function renderQ(){
+  const p=S.pool[S.i];S.sure=false;S.lock=false;
+  $("#qt").textContent=T[p.t].i+" "+T[p.t].n;$("#qc").textContent=`پرسش ${fa(S.i+1)} از ${fa(S.pool.length)}`;
+  $("#qchrom").innerHTML=chrom(S.pool.length,S.ans,S.i);$("#qq").textContent=p.q;
+  const cf=$("#cf");cf.classList.remove("on","hide");cf.setAttribute("aria-pressed","false");
+  $("#qo").innerHTML=p.o.map((o,j)=>`<button class="opt" data-j="${j}"><em>${L[j]}</em><span>${o.x}</span></button>`).join("");
+  $("#fb").classList.add("hide");
+}
+$("#cf").onclick=()=>{if(S.lock)return;S.sure=!S.sure;$("#cf").classList.toggle("on",S.sure);$("#cf").setAttribute("aria-pressed",S.sure)};
+$("#qo").onclick=e=>{const b=e.target.closest(".opt");if(b)pick(+b.dataset.j)};
+function pick(j){
+  if(S.lock)return;S.lock=true;const p=S.pool[S.i],ok=p.o[j].ok;
+  S.ans[S.i]={t:p.t,ok,sure:S.sure,pick:p.o[j].x,right:p.o.find(o=>o.ok).x,q:p.q,e:p.e,tip:p.tip,k:p.k};
+  document.querySelectorAll(".opt").forEach((el,x)=>{el.classList.add(p.o[x].ok?"ok":x===j?"bad":"dim");if(!p.o[x].ok&&x!==j)el.classList.add("dim")});
+  $("#cf").classList.add("hide");$("#qchrom").innerHTML=chrom(S.pool.length,S.ans,S.i+1);
+  const last=S.i===S.pool.length-1,msg=ok?(S.sure?"✔ درست و با اطمینان":"✔ درست؛ ولی مردد بودید"):(S.sure?"✘ نادرست، با اطمینان؛ این تصور اشتباه خطرناک‌تر است":"✘ نادرست");
+  $("#fb").innerHTML=`<b style="font-weight:500">${msg}</b><div class="ex"><b>چرا؟</b>${p.e}</div><div class="tip"><b>نکته برای مدرس</b>${p.tip}</div><button class="btn" id="nx">${last?"دیدن نتیجه":"پرسش بعدی"}</button>`;
+  $("#fb").classList.remove("hide");$("#nx").onclick=next;$("#nx").focus({preventScroll:true});
+}
+function next(){S.i++;S.i>=S.pool.length?result():(renderQ(),scrollTo({top:0,behavior:"smooth"}))}
+addEventListener("keydown",e=>{if($("#quiz").classList.contains("hide"))return;const n=+e.key;if(n>=1&&n<=4&&!S.lock)pick(n-1)});
+
+/* نتیجه */
+function result(){
+  const A=S.ans,tot=A.length,ok=A.filter(a=>a.ok).length,pc=Math.round(ok/tot*100);
+  const head=pc>=85?"آماده‌ی ورود به کلاس هستید":pc>=60?"نزدیک آمادگی کامل هستید":"یک دور مرور دیگر لازم است";
+  const sub=pc>=85?"پایه‌ی علمی شما محکم است؛ حالا روی شیوه‌ی بیان و سناریوهای کلاس کار کنید.":pc>=60?"چند نقطه‌ی ضعف مشخص دارید؛ فهرست زیر دقیقاً به همان‌ها اشاره می‌کند.":"نگران نباشید؛ بخش‌های ضعیف را در زیر ببینید و دوباره امتحان کنید.";
+  const R=2*Math.PI*52,topics=[...new Set(A.map(a=>a.t))];
+  const rows=topics.map(t=>{const x=A.filter(a=>a.t===t),o=x.filter(a=>a.ok).length,p=Math.round(o/x.length*100),col=p>=80?"var(--cy)":p>=50?"var(--am)":"var(--co)";
+    return `<div class="row"><h4><span>${T[t].i} ${T[t].n}</span><span style="color:${col}">${fa(o)} از ${fa(x.length)}</span></h4><div class="bar"><i style="width:${p}%;background:${col}"></i></div><p>${p>=80?T[t].s:(p>=50?"نزدیک هستید؛ ":"")+T[t].w}</p></div>`}).join("");
+  const dang=A.filter(a=>!a.ok&&a.sure),luck=A.filter(a=>a.ok&&!a.sure).length;
+  const wrong=A.filter(a=>!a.ok);
+  $("#result").innerHTML=`
+  <div class="brand"><span class="dot"></span>نتیجه‌ی آمادگی شما</div>
+  <div class="card" style="margin-top:14px"><div class="score">
+    <svg class="ring" viewBox="0 0 130 130"><circle cx="65" cy="65" r="52" fill="none" stroke="#ffffff14" stroke-width="10"/><circle cx="65" cy="65" r="52" fill="none" stroke="var(--cy)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${R}" stroke-dashoffset="${R*(1-pc/100)}" transform="rotate(-90 65 65)"/><text x="65" y="74" text-anchor="middle" font-size="26">${fa(pc)}٪</text></svg>
+    <div style="flex:1;min-width:220px"><h1 style="font-size:26px;margin:0 0 4px">${head}</h1><p class="lead" style="font-size:15px">${sub} (${fa(ok)} پاسخ درست از ${fa(tot)})</p></div></div>
+    <div style="margin-top:12px">${chrom(tot,A,-1)}<p class="lead" style="font-size:13px">هر پیک یک پرسش است: پیک بلند فیروزه‌ای یعنی درست، پیک کوتاه با دم قرمز یعنی نادرست.</p></div></div>
+  <div class="sec">وضعیت در هر موضوع و پیشنهاد آماده‌سازی</div><div class="card">${rows}</div>
+  ${dang.length?`<div class="warn"><b>${fa(dang.length)} پاسخ نادرست با اطمینان کامل:</b> این‌ها همان تصورهای غلطی هستند که ممکن است ناخواسته به شرکت‌کنندگان منتقل شوند. پیش از کلاس حتماً مرورشان کنید.</div>`:`<div class="tip"><b>اطمینان شما با دانش‌تان هم‌خوان بود</b>در هیچ پرسشی با اطمینان اشتباه نکردید؛ این نشانه‌ی خوبی است.</div>`}
+  ${luck?`<div class="ex"><b>${fa(luck)} پاسخ درست ولی مردد</b>برای این پرسش‌ها توضیح را یک بار دیگر بخوانید تا در کلاس با اطمینان پاسخ دهید.</div>`:""}
+  ${wrong.length?`<div class="sec">مرور پاسخ‌های اشتباه</div>`+wrong.map(a=>`<details><summary>${T[a.t].i} ${a.q}</summary><p style="margin-top:8px;font-size:15px;color:var(--co)">پاسخ شما: ${a.pick}</p><p style="font-size:15px;color:var(--cy)">پاسخ درست: ${a.right}</p><div class="ex"><b>چرا؟</b>${a.e}</div><div class="tip"><b>نکته برای مدرس</b>${a.tip}</div></details>`).join(""):`<div class="sec">همه‌ی پاسخ‌ها درست بود. عالی است!</div>`}
+  <div>${wrong.length?`<button class="btn" id="rw">تمرین دوباره‌ی پرسش‌های اشتباه</button>`:""}<button class="btn g" id="rs">بازگشت به موضوعات</button></div>`;
+  show("result");scrollTo(0,0);
+  if($("#rw"))$("#rw").onclick=()=>start(-1,wrong.map(a=>a.k));
+  $("#rs").onclick=()=>{show("home");scrollTo(0,0)};
+}
+</script>
+</body>
+</html>
